@@ -1,0 +1,33 @@
+{
+  "timestamp_utc": "2026-10-20T06:52:15.690694+00:00",
+  "host": "Ubuntu 22.04 WSL2 / ROS 2 Humble",
+  "ros_package_build": "passed",
+  "python_tests": {
+    "contracts": 5,
+    "exported_motion": 2,
+    "ros_integration": 2,
+    "status": "passed"
+  },
+  "cpp_packet_guard": "compiled and passed",
+  "upstream_patch": "applied against isolated pinned-source snapshot",
+  "skill_validation": "passed",
+  "upper_motion_library": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "squat_analysis": {
+    "sequence": "1+7 2+8",
+    "reference_limit_violations": [],
+    "whole_body_hardware_replay_allowed": false,
+    "shallow_combinations_passed": 12
+  },
+  "upstream_patch_sha256": "fe20f2da3b9c7091ce260b6b58525da3394be8d496e60815f3c51c364c32edca",
+  "hardware_sdk_build": "not_performed",
+  "cross_machine_dds": "not_tested",
+  "hardware_motion": "not_tested",
+  "free_standing_squat": "not_implemented"
+}

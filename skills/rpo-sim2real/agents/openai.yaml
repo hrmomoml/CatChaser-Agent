@@ -1,0 +1,4 @@
+interface:
+  display_name: "RPO 仿真到真机迁移"
+  short_description: "核对 RPO 23 轴接口，导出仿真动作并验证 ROS 2 上位机到主控的控制链路"
+  default_prompt: "使用 $rpo-sim2real 核对当前 RPO 源码版本并完成仿真动作到 ROS 2 主控接口的迁移与验证。"

@@ -1,0 +1,846 @@
+{
+  "sequence": "1+3 2+3 1+4 2+4 1+5 2+5 1+6 2+6 1+7 2+7 1+8 2+8",
+  "completed": true,
+  "failure": null,
+  "simulated_seconds": 130.05399999989288,
+  "fall_detected": false,
+  "self_collision_enabled": false,
+  "geometry_status": "Ankle assembly intersections remain unresolved; source collision masks retained",
+  "controller_sha256": "40f4d895cf15e962a5413969e558666b20b8bd3fa3967da2594188f67ba40794",
+  "deployment_policy_limit_check": "every 0.002 s, actual and reference, all 23 joints",
+  "joint_ranges": [
+    {
+      "name": "left_thigh_yaw_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.0033274852739379936,
+        0.004966478821854099
+      ],
+      "limits": [
+        -1.0,
+        0.6
+      ]
+    },
+    {
+      "name": "left_thigh_roll_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.00466115305669467,
+        0.003297974511633106
+      ],
+      "limits": [
+        -0.6,
+        1.0
+      ]
+    },
+    {
+      "name": "left_thigh_pitch_joint",
+      "reference": [
+        -1.4,
+        -0.0
+      ],
+      "actual": [
+        -1.4155946641911872,
+        0.0017563203911853044
+      ],
+      "limits": [
+        -1.57,
+        1.57
+      ]
+    },
+    {
+      "name": "left_knee_joint",
+      "reference": [
+        0.0,
+        1.55
+      ],
+      "actual": [
+        -0.0015700163039976617,
+        1.5715605418080854
+      ],
+      "limits": [
+        -0.2,
+        2.5
+      ]
+    },
+    {
+      "name": "left_ankle_pitch_joint",
+      "reference": [
+        -0.5,
+        -0.0
+      ],
+      "actual": [
+        -0.5049963428618124,
+        0.0034631056786640665
+      ],
+      "limits": [
+        -0.6,
+        0.6
+      ]
+    },
+    {
+      "name": "left_ankle_roll_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.0030907504851526613,
+        0.004036463350656258
+      ],
+      "limits": [
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "right_thigh_yaw_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.0046073457756624,
+        0.0033784313914389926
+      ],
+      "limits": [
+        -0.6,
+        1.0
+      ]
+    },
+    {
+      "name": "right_thigh_roll_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.003928622239995024,
+        0.004264223541582185
+      ],
+      "limits": [
+        -1.0,
+        0.6
+      ]
+    },
+    {
+      "name": "right_thigh_pitch_joint",
+      "reference": [
+        -1.4,
+        -0.0
+      ],
+      "actual": [
+        -1.4138218388782744,
+        0.0016768586982800978
+      ],
+      "limits": [
+        -1.57,
+        1.57
+      ]
+    },
+    {
+      "name": "right_knee_joint",
+      "reference": [
+        0.0,
+        1.55
+      ],
+      "actual": [
+        -0.0015776221019036965,
+        1.572617221088001
+      ],
+      "limits": [
+        -0.2,
+        2.5
+      ]
+    },
+    {
+      "name": "right_ankle_pitch_joint",
+      "reference": [
+        -0.5,
+        -0.0
+      ],
+      "actual": [
+        -0.5045004678842979,
+        0.003339421201044226
+      ],
+      "limits": [
+        -0.6,
+        0.6
+      ]
+    },
+    {
+      "name": "right_ankle_roll_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.003870683993403818,
+        0.0031746864543447757
+      ],
+      "limits": [
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "torso_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.0004511747641667338,
+        0.0004624690101707303
+      ],
+      "limits": [
+        -3.14,
+        3.14
+      ]
+    },
+    {
+      "name": "left_arm_pitch_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.006105476407402247,
+        0.005762686610293651
+      ],
+      "limits": [
+        -3.14,
+        1.57
+      ]
+    },
+    {
+      "name": "left_arm_roll_joint",
+      "reference": [
+        0.0,
+        0.3
+      ],
+      "actual": [
+        -0.0026481284424597017,
+        0.30234392970549423
+      ],
+      "limits": [
+        -0.25,
+        3.14
+      ]
+    },
+    {
+      "name": "left_arm_yaw_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.0005526821491547416,
+        0.000519625830346732
+      ],
+      "limits": [
+        -1.57,
+        1.57
+      ]
+    },
+    {
+      "name": "left_elbow_pitch_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -0.0022569402465681346,
+        0.0013314374251285985
+      ],
+      "limits": [
+        -0.6,
+        1.57
+      ]
+    },
+    {
+      "name": "left_elbow_yaw_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -4.339717009506644e-06,
+        3.0886605644120598e-06
+      ],
+      "limits": [
+        -1.57,
+        1.57
+      ]
+    },
+    {
+      "name": "right_arm_pitch_joint",
+      "reference": [
+        -0.8495722138958407,
+        0.0001754174353897372
+      ],
+      "actual": [
+        -0.8492875168782705,
+        0.0003080493785670697
+      ],
+      "limits": [
+        -3.14,
+        1.57
+      ]
+    },
+    {
+      "name": "right_arm_roll_joint",
+      "reference": [
+        -0.43468576606706677,
+        0.2
+      ],
+      "actual": [
+        -0.43457168124521506,
+        0.20134757870207298
+      ],
+      "limits": [
+        -3.14,
+        0.25
+      ]
+    },
+    {
+      "name": "right_arm_yaw_joint",
+      "reference": [
+        -0.4850266372993568,
+        0.23081344725268305
+      ],
+      "actual": [
+        -0.48504654824026194,
+        0.2310911901040848
+      ],
+      "limits": [
+        -1.57,
+        1.57
+      ]
+    },
+    {
+      "name": "right_elbow_pitch_joint",
+      "reference": [
+        -0.15772582456531165,
+        0.9059782436658464
+      ],
+      "actual": [
+        -0.15809441229101967,
+        0.9067199528200861
+      ],
+      "limits": [
+        -0.6,
+        1.57
+      ]
+    },
+    {
+      "name": "right_elbow_yaw_joint",
+      "reference": [
+        0.0,
+        0.0
+      ],
+      "actual": [
+        -3.583704289207656e-05,
+        3.8405943486552776e-05
+      ],
+      "limits": [
+        -1.57,
+        1.57
+      ]
+    }
+  ],
+  "max_body_tilt_deg": 20.206691754810972,
+  "min_com_footprint_margin_m": 0.040653920265631235,
+  "actions": [
+    {
+      "command": "1+3",
+      "name": "蹲下 + 上下摆动",
+      "posture": 1,
+      "arm": 3,
+      "start_s": 1.500000000000001,
+      "end_s": 13.002000000001011,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.7541326808805732,
+      "pelvis_height_end_m": 0.5689551165697571,
+      "pelvis_height_range_m": [
+        0.5687646071008977,
+        0.7541375607850066
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.000000000000009,
+      "moving_posture_arm_seconds": 4.493999999999727,
+      "tip_peak_to_peak_m": [
+        0.059737040279332576,
+        0.07397737440997572,
+        0.4572354659994876
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0008837581512753379,
+        0.0012786882057224391,
+        0.3013484706587707
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.0,
+        0.30000000000000004
+      ],
+      "tracking_rms_m": 0.0030642445447585983,
+      "max_tracking_error_m": 0.004885449704396422,
+      "frequency_hz": 2.1,
+      "measured_frequency_hz": 2.099802371541267
+    },
+    {
+      "command": "2+3",
+      "name": "站起 + 上下摆动",
+      "posture": 2,
+      "arm": 3,
+      "start_s": 13.502000000001178,
+      "end_s": 23.50599999999785,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.5689237682711433,
+      "pelvis_height_end_m": 0.7541237726075742,
+      "pelvis_height_range_m": [
+        0.5689228922507047,
+        0.7542519636431955
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00400000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.06108061456319458,
+        0.09998075022239937,
+        0.47931987174504914
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0009012227464255118,
+        0.0014113049894785012,
+        0.30139936688219815
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.0,
+        0.30000000000000004
+      ],
+      "tracking_rms_m": 0.0030303204823370522,
+      "max_tracking_error_m": 0.0050970327917138755,
+      "frequency_hz": 2.1,
+      "measured_frequency_hz": 2.09980237154231
+    },
+    {
+      "command": "1+4",
+      "name": "蹲下 + 左右摆动",
+      "posture": 1,
+      "arm": 4,
+      "start_s": 24.007999999997573,
+      "end_s": 34.0119999999956,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.7541293446354991,
+      "pelvis_height_end_m": 0.5688918324395544,
+      "pelvis_height_range_m": [
+        0.568831349294958,
+        0.7541293446354991
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00400000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.062138748979103764,
+        0.3954661830302352,
+        0.1860864709815726
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0007170312268910406,
+        0.3025293936551552,
+        0.0017847972151062708
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.29999999999999993,
+        0.0
+      ],
+      "tracking_rms_m": 0.00247607202315883,
+      "max_tracking_error_m": 0.003679295695230654,
+      "frequency_hz": 2.1,
+      "measured_frequency_hz": 2.1003212255998864
+    },
+    {
+      "command": "2+4",
+      "name": "站起 + 左右摆动",
+      "posture": 2,
+      "arm": 4,
+      "start_s": 34.51199999999621,
+      "end_s": 44.51400000000844,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.5689177022442865,
+      "pelvis_height_end_m": 0.7541266531660724,
+      "pelvis_height_range_m": [
+        0.5689176475624989,
+        0.7541553089622111
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00200000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.05840156391547291,
+        0.39445945584858527,
+        0.17912313533774804
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0006317413831127272,
+        0.3031423305715276,
+        0.0017090441504622467
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.29999999999999993,
+        0.0
+      ],
+      "tracking_rms_m": 0.0025251980789271385,
+      "max_tracking_error_m": 0.0037321164506360954,
+      "frequency_hz": 2.1,
+      "measured_frequency_hz": 2.1003212255966424
+    },
+    {
+      "command": "1+5",
+      "name": "蹲下 + 画圆",
+      "posture": 1,
+      "arm": 5,
+      "start_s": 45.01400000000905,
+      "end_s": 55.01600000002127,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.754121710228173,
+      "pelvis_height_end_m": 0.5689133131987638,
+      "pelvis_height_range_m": [
+        0.5688525937733077,
+        0.7541217292941105
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00200000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.06187617041251825,
+        0.3962006468229163,
+        0.484807234106561
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0002983225405311929,
+        0.30064693291569566,
+        0.3004943905726367
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.30000000000000004,
+        0.2999990525185342
+      ],
+      "tracking_rms_m": 0.0022985744553830774,
+      "max_tracking_error_m": 0.002709324229846683,
+      "frequency_hz": 1.2,
+      "measured_frequency_hz": 1.1999999999985334,
+      "mean_circle_radius_m": 0.15018369682903604,
+      "circle_radius_rms_error_m": 0.00021639907799756556
+    },
+    {
+      "command": "2+5",
+      "name": "站起 + 画圆",
+      "posture": 2,
+      "arm": 5,
+      "start_s": 55.51600000002188,
+      "end_s": 65.5180000000287,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.5689235281826244,
+      "pelvis_height_end_m": 0.7541271869945905,
+      "pelvis_height_range_m": [
+        0.5689215530447973,
+        0.7541765198173042
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00200000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.05966429520620359,
+        0.40071001664506267,
+        0.4547904159549417
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0003403264670330808,
+        0.3006692767901725,
+        0.3004511338064405
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.30000000000000004,
+        0.2999990525185293
+      ],
+      "tracking_rms_m": 0.0023139648656181834,
+      "max_tracking_error_m": 0.002676818599585806,
+      "frequency_hz": 1.2,
+      "measured_frequency_hz": 1.1999999999988051,
+      "mean_circle_radius_m": 0.1501639336668108,
+      "circle_radius_rms_error_m": 0.0002097839678219045
+    },
+    {
+      "command": "1+6",
+      "name": "蹲下 + 快速前伸—停顿—慢速收回",
+      "posture": 1,
+      "arm": 6,
+      "start_s": 66.02000000002754,
+      "end_s": 76.02400000000422,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.7541127505426232,
+      "pelvis_height_end_m": 0.5688979833643802,
+      "pelvis_height_range_m": [
+        0.568708886722573,
+        0.7541466728559466
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00400000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.16051717751689448,
+        0.0996578516416798,
+        0.18541494833063898
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.10042935131764108,
+        0.0010045018252953924,
+        0.0015747425258749725
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.10000000000000009,
+        0.0,
+        0.0
+      ],
+      "tracking_rms_m": 0.0004629309488516389,
+      "max_tracking_error_m": 0.002019984765086316
+    },
+    {
+      "command": "2+6",
+      "name": "站起 + 快速前伸—停顿—慢速收回",
+      "posture": 2,
+      "arm": 6,
+      "start_s": 76.52600000000305,
+      "end_s": 86.52999999997974,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.5689179205037743,
+      "pelvis_height_end_m": 0.7541593321105206,
+      "pelvis_height_range_m": [
+        0.5689179205037743,
+        0.7542513454594357
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00400000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.15589147335551362,
+        0.09972505731893541,
+        0.1792813179308833
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.1004620489334132,
+        0.0012068544716067608,
+        0.0018519997272281596
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.10000000000000009,
+        0.0,
+        0.0
+      ],
+      "tracking_rms_m": 0.0004807306728932444,
+      "max_tracking_error_m": 0.0020023086299212917
+    },
+    {
+      "command": "1+7",
+      "name": "蹲下 + 从左到右画正弦波",
+      "posture": 1,
+      "arm": 7,
+      "start_s": 87.03199999997857,
+      "end_s": 97.03599999995525,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.7541152093865324,
+      "pelvis_height_end_m": 0.5689224650827884,
+      "pelvis_height_range_m": [
+        0.5687386669077468,
+        0.7541255649114766
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00400000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.060844169689102445,
+        0.4470942866017308,
+        0.38596319389957334
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0015903019812742447,
+        0.40029490334652335,
+        0.203572902169322
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.3999999998880487,
+        0.19999944928689373
+      ],
+      "tracking_rms_m": 0.002063473444660209,
+      "max_tracking_error_m": 0.006021191066028102
+    },
+    {
+      "command": "2+7",
+      "name": "站起 + 从左到右画正弦波",
+      "posture": 2,
+      "arm": 7,
+      "start_s": 97.53799999995408,
+      "end_s": 107.54199999993077,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.5689226119024736,
+      "pelvis_height_end_m": 0.7541167623650112,
+      "pelvis_height_range_m": [
+        0.5689226119024736,
+        0.7541887828362416
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00400000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.05885056961325419,
+        0.495207826313468,
+        0.36609361201616497
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0014861613549029817,
+        0.4000962413529712,
+        0.20367227091531437
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.3999999998880487,
+        0.19999944928689373
+      ],
+      "tracking_rms_m": 0.0020545525651212084,
+      "max_tracking_error_m": 0.005816277148216764
+    },
+    {
+      "command": "1+8",
+      "name": "蹲下 + 左右快扫—停顿",
+      "posture": 1,
+      "arm": 8,
+      "start_s": 108.0439999999296,
+      "end_s": 118.04799999990628,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.7541244217788826,
+      "pelvis_height_end_m": 0.568914072311209,
+      "pelvis_height_range_m": [
+        0.5689099471903469,
+        0.7541341752081787
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00400000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.05962314197523488,
+        0.4619166900289361,
+        0.18495990697966735
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.0003574651404402718,
+        0.4009632892616397,
+        0.0008148196339686775
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.40000000000000024,
+        0.0
+      ],
+      "tracking_rms_m": 0.0007198135823297518,
+      "max_tracking_error_m": 0.0035662831575635117
+    },
+    {
+      "command": "2+8",
+      "name": "站起 + 左右快扫—停顿",
+      "posture": 2,
+      "arm": 8,
+      "start_s": 118.54999999990511,
+      "end_s": 128.55399999988572,
+      "completed": true,
+      "cancelled": false,
+      "pelvis_height_start_m": 0.5689200507143897,
+      "pelvis_height_end_m": 0.7541346237645586,
+      "pelvis_height_range_m": [
+        0.5689200507143897,
+        0.7541394235461465
+      ],
+      "posture_blend_range": [
+        0.0,
+        1.0
+      ],
+      "simultaneous_seconds": 10.00400000000001,
+      "moving_posture_arm_seconds": 5.987999999999563,
+      "tip_peak_to_peak_m": [
+        0.05784700249358643,
+        0.4926265650846738,
+        0.1788750013997491
+      ],
+      "relative_tip_peak_to_peak_m": [
+        0.00036406947329920003,
+        0.4006017806954489,
+        0.0007433829234023692
+      ],
+      "relative_target_peak_to_peak_m": [
+        0.0,
+        0.40000000000000024,
+        0.0
+      ],
+      "tracking_rms_m": 0.0007306384215171218,
+      "max_tracking_error_m": 0.0034896234209472027
+    }
+  ]
+}

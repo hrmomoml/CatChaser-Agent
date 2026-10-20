@@ -1,0 +1,117 @@
+--- a/src/inference_node.hpp
++++ b/src/inference_node.hpp
+@@ -30,6 +30,8 @@
+ #include "utils/motion_loader.hpp"
+ #include "utils/latent_loader.hpp"
+ #include <std_srvs/srv/trigger.hpp>
++#include <std_srvs/srv/set_bool.hpp>
++#include "external_arm_guard.hpp"
+ #include "robot_interface.hpp"
+ 
+ enum class ObsStackOrder {
+@@ -162,6 +164,21 @@
+             this->create_publisher<sensor_msgs::msg::Imu>("/imu", data_qos);
+         joint_state_publisher_ =
+             this->create_publisher<sensor_msgs::msg::JointState>("/joint_states", data_qos);
++        set_interrupt_service_ = this->create_service<std_srvs::srv::SetBool>(
++            "set_interrupt", [this](const std::shared_ptr<std_srvs::srv::SetBool::Request> req,
++                                   std::shared_ptr<std_srvs::srv::SetBool::Response> res) {
++                std::unique_lock<std::mutex> lock(interrupt_mutex_);
++                const bool fresh = interrupt_packet_received_ &&
++                    std::chrono::duration<double>(std::chrono::steady_clock::now() - last_interrupt_packet_).count() < 0.5;
++                if (req->data && (!supports_interrupt() || !is_running_.load() || !robot_->is_init_.load() || !fresh)) {
++                    res->success = false;
++                    res->message = "Require interrupt policy, initialized motors, running inference, and fresh 10-joint target";
++                    return;
++                }
++                is_interrupt_.store(req->data);
++                res->success = true;
++                res->message = req->data ? "External arms enabled" : "Policy owns arms";
++            });
+         inference_thread_ = std::thread(&InferenceNode::inference, this);
+         control_thread_ = std::thread(&InferenceNode::control, this);
+ 
+@@ -255,6 +272,9 @@
+     rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr reset_joints_service_, set_zeros_service_, clear_errors_service_, refresh_joints_service_, read_joints_service_, read_imu_service_, init_motors_service_, deinit_motors_service_, start_inference_service_, stop_inference_service_;
+ 
+     std::mutex act_mutex_, perception_mutex_, interrupt_mutex_, cmd_mutex_, mode_mutex_, control_mutex_, lb_switch_mutex_;
++    rclcpp::Service<std_srvs::srv::SetBool>::SharedPtr set_interrupt_service_;
++    bool interrupt_packet_received_ = false;
++    std::chrono::steady_clock::time_point last_interrupt_packet_{};
+     std::vector<float> act_, last_act_, cmd_vel_, interrupt_action_, perception_obs_buffer_;
+     std::vector<float> joint_pos_buffer_, joint_vel_buffer_, joint_torques_buffer_, quat_buffer_, ang_vel_buffer_;
+     sensor_msgs::msg::JointState joint_state_msg_, action_msg_;
+--- a/src/ros_interface.cpp
++++ b/src/ros_interface.cpp
+@@ -442,12 +442,16 @@
+ }
+ 
+ void InferenceNode::subs_joint_state_callback(const std::shared_ptr<sensor_msgs::msg::JointState> msg){
+-    if(supports_interrupt() && is_interrupt_.load()){
+-        std::unique_lock<std::mutex> lock(interrupt_mutex_);
+-        for(size_t i = 0; i < interrupt_action_.size(); i++){
+-            interrupt_action_[i] = msg->position[i];
+-        }
+-    }
++    if (!supports_interrupt() || !valid_external_arm_target(msg->position, joint_limits_)) {
++        RCLCPP_WARN(this->get_logger(), "Rejected external arm packet: need 10 finite absolute angles within limits");
++        return;
++    }
++    std::unique_lock<std::mutex> lock(interrupt_mutex_);
++    for (size_t i = 0; i < interrupt_action_.size(); ++i) {
++        interrupt_action_[i] = static_cast<float>(msg->position[i]);
++    }
++    last_interrupt_packet_ = std::chrono::steady_clock::now();
++    interrupt_packet_received_ = true;
+ }
+ 
+ bool InferenceNode::start_joint_reset() {
+--- a/src/inference_node.cpp
++++ b/src/inference_node.cpp
+@@ -335,6 +335,15 @@
+     if(!is_running_.load()){
+         return;
+     }
++    bool limit_external_arms = false;
++    {
++        std::unique_lock<std::mutex> lock(interrupt_mutex_);
++        limit_external_arms = interrupt_packet_received_;
++        if (is_interrupt_.load() && (!interrupt_packet_received_ ||
++            std::chrono::duration<double>(std::chrono::steady_clock::now() - last_interrupt_packet_).count() > 0.5)) {
++            is_interrupt_.store(false);
++        }
++    }
+     {
+         std::unique_lock<std::mutex> lock(act_mutex_);
+         float alpha = act_alpha_;
+@@ -347,7 +356,9 @@
+                 policy_transition_elapsed_ + dt_, policy_transition_duration_);
+         }
+         for (size_t i = 0; i < act_.size(); i++) {
+-            last_act_[i] = alpha * act_[i] + (1 - alpha) * last_act_[i];
++            const float target = alpha * act_[i] + (1 - alpha) * last_act_[i];
++            last_act_[i] = (limit_external_arms && i + 10 >= act_.size())
++                ? limit_external_arm_step(last_act_[i], target, 0.5f * dt_) : target;
+         }
+     }
+     robot_->apply_action(last_act_);
+--- /dev/null
++++ b/src/external_arm_guard.hpp
+@@ -0,0 +1,17 @@
++// SPDX-License-Identifier: GPL-3.0-only
++#pragma once
++#include <algorithm>
++#include <cmath>
++#include <vector>
++inline bool valid_external_arm_target(const std::vector<double>& q,
++                                      const std::vector<double>& limits) {
++    if (q.size() != 10 || limits.size() != 46) return false;
++    for (size_t i = 0; i < 10; ++i) {
++        const size_t j = 13 + i;
++        if (!std::isfinite(q[i]) || q[i] < limits[2*j] || q[i] > limits[2*j+1]) return false;
++    }
++    return true;
++}
++inline float limit_external_arm_step(float previous, float target, float max_delta) {
++    return previous + std::clamp(target - previous, -max_delta, max_delta);
++}

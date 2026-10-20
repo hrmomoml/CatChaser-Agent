@@ -1,0 +1,31 @@
+{
+  "role": "host",
+  "os": "Linux",
+  "architecture": "x86_64",
+  "kernel": "6.18.54.1-microsoft-standard-WSL2",
+  "wsl": true,
+  "ros_distro": "humble",
+  "ros_domain_id": "42",
+  "ros_localhost_only": "0",
+  "rmw": "rmw_fastrtps_cpp",
+  "modules": {
+    "rclpy": true,
+    "sensor_msgs": true,
+    "std_msgs": true,
+    "std_srvs": true,
+    "numpy": true,
+    "yaml": true
+  },
+  "tools": {
+    "git": true,
+    "colcon": true,
+    "cmake": true,
+    "g++": true,
+    "ros2": true,
+    "ssh": true,
+    "gh": false
+  },
+  "ready_for_host_mock": true,
+  "hardware_validation": "NOT_PERFORMED",
+  "cross_machine_dds": "NOT_TESTED"
+}
