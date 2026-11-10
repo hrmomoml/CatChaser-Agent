@@ -1,3 +1,5 @@
+<img width="2160" height="2880" alt="海报" src="https://github.com/user-attachments/assets/d3ed3615-3a00-4f18-8d25-c265431e3004" />
+
 # RPO 仿真到真机任务迁移
 
 将现有23轴RPO MuJoCo逗猫动作导出为角度参考，通过Ubuntu 22.04 / ROS2 Humble上位机发送给机器人主控。默认完全使用mock，不打开CAN、不初始化电机。
